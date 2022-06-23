@@ -22,3 +22,9 @@ puts "----------"
 # Display the error messages provided back from ActiveRecord to the user (one on each line) after you attempt to save/create the record
 
 
+puts "Please insert a store name:"
+store_name = gets.chomp
+
+new_store = Store.create(name: store_name)
+new_store.valid?
+puts new_store.errors.messages
